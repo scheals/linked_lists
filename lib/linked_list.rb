@@ -10,10 +10,10 @@ class LinkedList
     @head = nil
   end
 
-  def append(node)
-    return self.head = node if head.nil?
+  def append(value)
+    return self.head = Node.new(value) if head.nil?
 
-    tail.next_node = node if tail.next_node.nil?
+    tail.next_node = Node.new(value) if tail.next_node.nil?
   end
 
   def tail(node = head)
@@ -21,5 +21,4 @@ class LinkedList
 
     tail(node.next_node)
   end
-
 end
