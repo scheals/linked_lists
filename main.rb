@@ -18,3 +18,7 @@ p test.at(5)
 p test.find('test2')
 p test.find('test5')
 puts test
+test.insert_at(1, 'insert_test')
+puts test
+test.insert_at(0, 'insert_head_test')
+puts test

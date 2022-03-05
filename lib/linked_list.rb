@@ -11,15 +11,15 @@ class LinkedList
   end
 
   def append(value)
-    return self.head = create_node(value) if head.nil?
+    return begin_list(value) if head.nil?
 
     tail.next_node = create_node(value)
   end
 
   def prepend(value)
-    return self.head = create_node(value) if head.nil?
+    return begin_list(value) if head.nil?
 
-    self.head = create_node(value, head)
+    list_beginning(value)
   end
 
   def tail(node = head)
@@ -76,5 +76,22 @@ class LinkedList
 
   def create_node(value = nil, next_node = nil)
     Node.new(value, next_node)
+  end
+
+  def insert_at(index, value, counter = 0)
+    return 'Unreachable index!' if at(index).nil?
+    return list_beginning(value) if index.zero?
+
+    return at(index - 1).next_node = create_node(value, at(index)) if index == counter
+
+    insert_at(index, value, counter + 1)
+  end
+
+  def begin_list(value)
+    self.head = create_node(value)
+  end
+
+  def list_beginning(value)
+    self.head = create_node(value, head)
   end
 end
