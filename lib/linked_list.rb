@@ -11,15 +11,15 @@ class LinkedList
   end
 
   def append(value)
-    return self.head = Node.new(value) if head.nil?
+    return self.head = create_node(value) if head.nil?
 
-    tail.next_node = Node.new(value)
+    tail.next_node = create_node(value)
   end
 
   def prepend(value)
-    return self.head = Node.new(value) if head.nil?
+    return self.head = create_node(value) if head.nil?
 
-    self.head = Node.new(value, head)
+    self.head = create_node(value, head)
   end
 
   def tail(node = head)
@@ -72,5 +72,9 @@ class LinkedList
 
     string += "( #{node.value} ) -> "
     to_s(node.next_node, string)
+  end
+
+  def create_node(value = nil, next_node = nil)
+    Node.new(value, next_node)
   end
 end
