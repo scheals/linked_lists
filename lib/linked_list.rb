@@ -59,4 +59,11 @@ class LinkedList
 
     at(index, node.next_node, counter + 1)
   end
+
+  def find(value, node = head, index = 0)
+    return index if node.value == value
+    return nil if last_node?(node)
+
+    find(value, node.next_node, index + 1)
+  end
 end

@@ -15,3 +15,5 @@ puts test.contains?('test1')
 test.pop
 test.append('post-pop')
 p test.at(5)
+p test.find('test2')
+p test.find('test5')
