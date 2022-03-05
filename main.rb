@@ -22,3 +22,7 @@ test.insert_at(1, 'insert_test')
 puts test
 test.insert_at(0, 'insert_head_test')
 puts test
+test.remove_at(1)
+puts test
+test.remove_at(0)
+puts test

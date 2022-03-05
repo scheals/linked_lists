@@ -19,7 +19,7 @@ class LinkedList
   def prepend(value)
     return begin_list(value) if head.nil?
 
-    list_beginning(value)
+    swap_head(value)
   end
 
   def tail(node = head)
@@ -80,7 +80,7 @@ class LinkedList
 
   def insert_at(index, value, counter = 0)
     return 'Unreachable index!' if at(index).nil?
-    return list_beginning(value) if index.zero?
+    return swap_head(value) if index.zero?
 
     return at(index - 1).next_node = create_node(value, at(index)) if index == counter
 
@@ -91,7 +91,15 @@ class LinkedList
     self.head = create_node(value)
   end
 
-  def list_beginning(value)
+  def swap_head(value)
     self.head = create_node(value, head)
+  end
+
+  def remove_at(index, counter = 0)
+    return 'Unreachable index!' if at(index).nil?
+    return self.head = at(1) if index.zero?
+    return at(index - 1).next_node = at(index + 1) if index == counter
+
+    remove_at(index, counter + 1)
   end
 end
