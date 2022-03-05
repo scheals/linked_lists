@@ -13,7 +13,7 @@ class LinkedList
   def append(value)
     return self.head = Node.new(value) if head.nil?
 
-    tail.next_node = Node.new(value) if tail.next_node.nil?
+    tail.next_node = Node.new(value)
   end
 
   def prepend(value)
@@ -42,5 +42,4 @@ class LinkedList
 
     contains?(node.next_node, value)
   end
-
 end
