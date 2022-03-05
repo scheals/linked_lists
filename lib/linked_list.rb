@@ -27,4 +27,20 @@ class LinkedList
 
     tail(node.next_node)
   end
+
+  def size
+
+  end
+
+  def pop
+
+  end
+
+  def contains?(node = head, value)
+    return true if node.value == value
+    return false if node.next_node.nil?
+
+    contains?(node.next_node, value)
+  end
+
 end

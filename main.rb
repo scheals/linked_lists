@@ -11,3 +11,5 @@ p test
 p test.tail
 test.prepend('test4')
 p test
+puts test.contains?('test5')
+puts test.contains?('test1')
