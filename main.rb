@@ -9,3 +9,5 @@ test.append('test2')
 test.append('test3')
 p test
 p test.tail
+test.prepend('test4')
+p test
