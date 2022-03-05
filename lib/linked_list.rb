@@ -23,13 +23,15 @@ class LinkedList
   end
 
   def tail(node = head)
-    return node if node.next_node.nil?
+    return node if last_node?(node)
 
     tail(node.next_node)
   end
 
-  def size
+  def size(node = head, counter = 1)
+    return counter if last_node?(node)
 
+    size(node.next_node, counter + 1)
   end
 
   def pop
@@ -38,8 +40,14 @@ class LinkedList
 
   def contains?(node = head, value)
     return true if node.value == value
-    return false if node.next_node.nil?
+    return false if last_node?(node)
 
     contains?(node.next_node, value)
+  end
+
+  def last_node?(node)
+    return true if node.next_node.nil?
+
+    false
   end
 end
