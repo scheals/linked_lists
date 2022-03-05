@@ -34,8 +34,10 @@ class LinkedList
     size(node.next_node, counter + 1)
   end
 
-  def pop
+  def pop(node = head)
+    return node.next_node = nil if last_node?(node.next_node)
 
+    pop(node.next_node)
   end
 
   def contains?(node = head, value)

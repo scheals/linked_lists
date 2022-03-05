@@ -16,3 +16,7 @@ p test
 p test.size
 puts test.contains?('test5')
 puts test.contains?('test1')
+test.pop
+p test
+test.append('post-pop')
+p test
