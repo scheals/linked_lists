@@ -17,3 +17,4 @@ test.append('post-pop')
 p test.at(5)
 p test.find('test2')
 p test.find('test5')
+puts test
