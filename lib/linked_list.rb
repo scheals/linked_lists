@@ -52,4 +52,11 @@ class LinkedList
 
     false
   end
+
+  def at(index, node = head, counter = 0)
+    return node if index == counter
+    return nil if last_node?(node)
+
+    at(index, node.next_node, counter + 1)
+  end
 end
