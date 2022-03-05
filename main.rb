@@ -11,12 +11,15 @@ p test.tail
 test.prepend('test4')
 p test.size
 puts test.contains?('test5')
-puts test.contains?('test1')
-test.pop
-test.append('post-pop')
-p test.at(5)
+puts test.contains?('test3')
 p test.find('test2')
 p test.find('test5')
+test.pop
+test.append('post-pop')
+test.prepend('prepend-test')
+test.append('append-test')
+puts test
+p test.at(5)
 puts test
 test.insert_at(1, 'insert_test')
 puts test

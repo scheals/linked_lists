@@ -68,7 +68,7 @@ class LinkedList
   end
 
   def to_s(node = head, string = '')
-    return string += 'nil' if last_node?(node)
+    return string += "( #{node.value} ) -> nil" if last_node?(node)
 
     string += "( #{node.value} ) -> "
     to_s(node.next_node, string)
